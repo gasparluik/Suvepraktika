@@ -1,3 +1,2 @@
-# oo2021
-Objektorienteeritud Programmeerimine 2021
+# Interaktsioonidisain
 Siia alles tuleb häääästi sisukas tekst projekti/aine kohta :)
