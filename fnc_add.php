@@ -7,19 +7,38 @@ $conn = new mysqli($GLOBALS["serverhost"], $username, $password, $database); //c
 
 
 //lisa rakendus
-function addApplication($appName, $contact, $client, $url, $version, $serverAddress, $serverPlace){
+function addApplication($appName, $platform , $contact, $client, $url,  $version, $serverAddress, $serverPlace, $commentInput){
     $date = date('Y-m-d H:i:s'); // timestamp
     if(isset($_POST["submitApp"])){
         $conn = new mysqli('serverhost', 'serverusername', 'serverpassword', 'database'); //connection to mySql
-        $stmt = $conn->prepare("INSERT INTO App(Name, Platform, URL, Server_address, Server_place, Contact, Version, Client, Date) VALUES(?,?,?,?,?,?,?,?)");
+        $stmt = $conn->prepare("INSERT INTO App(Name, Platform, URL, Server_address, Server_place, Contact, Version, Comments, Client, Date) VALUES(?,?,?,?,?,?,?,?,?)");
         echo $conn->error;
 
-        $stmt->bind_param("ssssssssi",$appName, $contact, $client, $url, $version, $serverAddress, $serverPlace, $date);
+        $stmt->bind_param("ssssssssi",$appName, $platform, $url, $serverAddress, $serverPlace, $contact, $version, $commentInput, $client, $date);
         $stmt->execute();
         $stmt->close();
         $conn->close();
 
     }
+}
+//kommentaari kuvamise funktsioon
+function readComment(){
+     //Esitleb rakendusega seotud kommentaari
+	  $notice = null;
+      $conn = new mysqli($GLOBALS["serverhost"], $GLOBALS["serverusername"], $GLOBALS["serverpassword"], $GLOBALS["database"]);
+      //kas rakendusega on seotud mingi kommentaar, mida saab kuvada
+      $stmt = $conn->prepare("SELECT Comments FROM App WHERE Id = ?");
+      echo $conn->error;
+      $stmt->bind_param("s", $_SESSION["comments"]);
+      $stmt->bind_result($descriptionfromdb);
+      $stmt->execute();
+      if($stmt->fetch()){
+          $notice = $descriptionfromdb;
+      }
+      $stmt->close();
+      $conn->close();
+      return $notice;
+
 }
 
 

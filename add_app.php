@@ -7,9 +7,10 @@ require ("fnc_add.php"); // basic post funktsioon
 $inputerror ="";
 
 //fnc_add funkstioonid
-$submit = addApplication($appName, $contact, $client, $url, $version, $serverAddress, $serverPlace);
-$comment = readComment($commentInput);
+$submit = addApplication($appName, $contact, $platform, $client, $url, $version, $serverAddress, $serverPlace, $commentInput);
+$comment = readComment(); //loeb kommentaare
 
+//Funktsiooni sees kasutatavad POST muutujad
 $appName = $_POST["appName"];
 $contact = $_POST["contact"];
 $client = $_POST["client"];
@@ -17,12 +18,15 @@ $url = $_POST["url"];
 $version = $_POST["version"];
 $serverAddress = $_POST["serverAddress"];
 $serverPlace = $_POST["serverPlace"];
+$commentInput = $_POST["commentInput"];
+$platform = $_POST["platform"];
 
+//Kontrolli, et salvestamisel, ei oleks nõutud välja tühjad
 if(isset($_POST["submitApp"])){
 	if(empty($appName or $contact or $client or $url or $serverAddress or $serverPlace)){
 		$inputerror .= "Väli on tühi!";
 	}
-
+	echo $inputerror;
 }
 
 
@@ -42,6 +46,7 @@ if(isset($_POST["submitApp"])){
 	<label for="client">Klient</label>
 	<input type="text" name="client" id="client" placeholder="Lavastaja nimi" required>
 	<br>
+	<p>Platvorm</p><input type="text" name="platform" id="platform" placeholder="Platvorm.." required>
 	<p>URL</p><input type="text" name="url" id="url" value="url" required> <!peaks muutma type text to link? >
 	<br>
 	<p>Versioon/p><input type="text" name="version" id="version" placeholder="Versioon">
