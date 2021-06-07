@@ -4,7 +4,22 @@
 <html lang="et">
 <head>
 	<meta charset="utf-8"/>
-	<title>Monitory monitoring Monitory</title>
+	<title>Beep..Working..Beep</title>
 	
 </head>
-<body style="background-color: #AED6F1;">
+<body > <!style="background-color: #AED6F1;">
+<br>
+    <div id="logoimage">
+        <image src="logotest.png" alt="logo" height="100px" width="320px">
+    </div>
+    <br>
+    <div id="container"> 
+        <div id="container_one"></div>
+        <div id="container_two">
+            <div id="content">
+            <h2><?php echo $namefromdb?></h2>
+            <?php echo $apphtml; ?>
+            <ul><button><a href="add_app.php">Muuda andmeid</a></button></ul>
+            </div>
+        </div>
+    </div>

@@ -1,4 +1,4 @@
 <?php
-$serverhost = "localhost";
-$password = "if20";
-$username = "if20";
+$serverhost = 'localhost';
+$serverusername = 'if20';
+$serverpassword = 'if20';

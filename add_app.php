@@ -2,6 +2,14 @@
 require ("header.php"); //basic html algus utf estiga jne
 require ("fnc_add.php"); // basic post funktsioon
 
+
+//home.php sisesed muutujad
+$inputerror ="";
+
+//fnc_add funkstioonid
+$submit = addApplication($appName, $contact, $client, $url, $version, $serverAddress, $serverPlace);
+$comment = readComment($commentInput);
+
 $appName = $_POST["appName"];
 $contact = $_POST["contact"];
 $client = $_POST["client"];
@@ -9,6 +17,13 @@ $url = $_POST["url"];
 $version = $_POST["version"];
 $serverAddress = $_POST["serverAddress"];
 $serverPlace = $_POST["serverPlace"];
+
+if(isset($_POST["submitApp"])){
+	if(empty($appName or $contact or $client or $url or $serverAddress or $serverPlace)){
+		$inputerror .= "Väli on tühi!";
+	}
+
+}
 
 
 //php lõpp
@@ -35,7 +50,12 @@ $serverPlace = $_POST["serverPlace"];
 	<br>
 	<p>Serveri asukoht</p><input type="text" name="serverPlace" id="serverPlace" placeholder="Serveri asukoht" required>
 	<br>
-	<input type="submit" name="saveApp" value="Lisa rakendus">
+	<textarea rows="10" cols="80" name="commentInput" id="commentInput" placeholder="Kommentaarid....."><?php echo $comment; ?></textarea>
+
+	<input type="submit" name="submitApp" value="Lisa rakendus">
   </form>
+  <p><?php echo $inputerror; ?></p>
+
+
 </body>
 </html>

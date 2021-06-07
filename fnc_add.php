@@ -3,14 +3,18 @@
 //POST submittimise funktsioon String ja Int väärtustele
 require ("config.php");
 $database = "if20_gaspar_l_1u";
+$conn = new mysqli($GLOBALS["serverhost"], $username, $password, $database); //connection to mySql
 
+
+//lisa rakendus
 function addApplication($appName, $contact, $client, $url, $version, $serverAddress, $serverPlace){
-    if(isset($_POST["saveApp"])){
-        $conn = new mysqli($serverhost, $username, $password, $database);
-        $stmt = $conn->prepare("INSERT INTO App(Name, Platform, URL, Server_address, Server_place, Contact, Version, Client) VALUES(?,?,?,?,?,?,?,?)");
+    $date = date('Y-m-d H:i:s'); // timestamp
+    if(isset($_POST["submitApp"])){
+        $conn = new mysqli('serverhost', 'serverusername', 'serverpassword', 'database'); //connection to mySql
+        $stmt = $conn->prepare("INSERT INTO App(Name, Platform, URL, Server_address, Server_place, Contact, Version, Client, Date) VALUES(?,?,?,?,?,?,?,?)");
         echo $conn->error;
 
-        $stmt->bind_param("ssssssss",$appName, $contact, $client, $url, $version, $serverAddress, $serverPlace );
+        $stmt->bind_param("ssssssssi",$appName, $contact, $client, $url, $version, $serverAddress, $serverPlace, $date);
         $stmt->execute();
         $stmt->close();
         $conn->close();
