@@ -24,10 +24,8 @@
             <br>
             <div id="result"></div>
         </div>
-    </body>
-</html>
 
-<script>
+<script> // script mis loeb reaalajas klaviatuuri vajutusi
     $(document).ready(function(){
         $('#search').keyup(function(){
             var txt = $(this).val();
@@ -47,3 +45,5 @@
         });
     });
 </script>
+    </body>
+</html>
