@@ -1,37 +1,66 @@
 <?php
-require ("fnc_add.php"); // basic post funktsioon
+//require ("fnc_add.php"); // basic post funktsioon
+
+
 
 $inputerror = "";
 //kui klikiti submit, siis ...
 if(isset($_POST["submitApp"])){
   if(empty($_POST["appName"]) or empty($_POST["contact"]) or empty($_POST["url"]) or empty($_POST["serverPlace"])){
 	$inputerror .= "Osa infot on sisestamata! ";
-  }
-  if(empty($inputerror)){
-	  addApplication($_POST["appName"], $_POST["platform"], $_POST["contact"], $_POST["client"], $_POST["url"], $_POST["version"], $_POST["serverAddress"], $_POST["serverPlace"], $_POST["commentInput"]);
-  }
+  } else {
+	$appName = $_POST["appName"];
+	$contact = $_POST["contact"];
+	$client = $_POST["client"];
+	$url = $_POST["url"];
+	$version = $_POST["version"];
+	$serverAddress = $_POST["serverAddress"];
+	$serverPlace = $_POST["serverPlace"];
+	$commentInput = $_POST["commentInput"];
+	$platform = $_POST["platform"];
+
+	//addApplication($_POST["appName"], $_POST["platform"], $_POST["contact"], $_POST["client"], $_POST["url"], $_POST["version"], $_POST["serverAddress"], $_POST["serverPlace"], $_POST["commentInput"]);
+	 $database = 'if20_gaspar_l_1u';
+	 $serverhost = 'localhost';
+	 $serverusername = 'if20';
+	 $serverpassword = 'if20';
+	 $conn = new mysqli($serverhost, $serverusername, $serverpassword, $database);
+
+	//$conn = new mysqli($GLOBALS["serverhost"], $serverusername, $serverpassword, $database); //connection to mySql
+
+	 $notice = null;
+	 if ($conn->connection_error){
+		 die("Connection failed to database:" . $conn->connection_error);
+	 }
+	 $stmt = $conn->prepare("INSERT INTO App (Name, Platform, URL, Server_address, Server_place, Contact, Version, Comments, Client) VALUES()");
+	 echo $conn->error;
+	 $stmt->bind_param("sssssssss", $appName, $platform, $url, $serverAddress, $serverPlace, $contact, $version, $commentInput, $client);
+	 $stmt->execute();
+	 if($stmt->execute()){
+		 $notice = "kõik on ok";
+	 } else {
+	 	$notice = $stmt->error;
+	 }
+
+	 $stmt->close();
+	 $conn->close();
+	 return $notice;
+	//addApplication lõppeb
+   }
 }
 
-/*//home.php sisesed muutujad
+/*
+//home.php sisesed muutujad
 $inputerror ="";
 //Funktsiooni sees kasutatavad POST muutujad
 
 
 
 //fnc_add funkstioonid
-
 $comment = readComment(); //loeb kommentaare
+*/
 
-$appName = $_POST["appName"];
-$contact = $_POST["contact"];
-$client = $_POST["client"];
-$url = $_POST["url"];
-$version = $_POST["version"];
-$serverAddress = $_POST["serverAddress"];
-$serverPlace = $_POST["serverPlace"];
-$commentInput = $_POST["commentInput"];
-$platform = $_POST["platform"];
-
+/*
 //Kontrolli, et salvestamisel, ei oleks nõutud välja tühjad
 if(isset($_POST["submitApp"])){
 	if(empty($appName or $contact or $client or $url or $serverAddress or $serverPlace)){
