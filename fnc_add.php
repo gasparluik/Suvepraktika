@@ -12,8 +12,7 @@ function addApplication($appName, $platform , $contact, $client, $url,  $version
 
     $date = date('Y-m-d H:i:s'); // timestamp
     if(isset($_POST["submitApp"])){
-        $conn = new mysqli('serverhost', 'serverusername', 'serverpassword', 'database'); //connection to mySql
-        $stmt = $conn->prepare("INSERT INTO App(Name, Platform, URL, Server_address, Server_place, Contact, Version, Comments, Client, Date) VALUES(?,?,?,?,?,?,?,?,?)");
+        $conn = new mysqli($GLOBALS["serverhost"], $GLOBALS["serverusername"], $GLOBALS["serverpassword"], $GLOBALS["database"]);        $stmt = $conn->prepare("INSERT INTO App(Name, Platform, URL, Server_address, Server_place, Contact, Version, Comments, Client, Date) VALUES(?,?,?,?,?,?,?,?,?)");
         echo $conn->error;
 
         $stmt->bind_param("ssssssssi",$appName, $platform, $url, $serverAddress, $serverPlace, $contact, $version, $commentInput, $client, $date);
