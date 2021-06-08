@@ -1,5 +1,7 @@
 <?php
 require("config.php"); //Attempt MySQL server connection.
+global $conn;
+$inputresult = $_POST["result"];
 
 if($conn === false){ //check connection
     die("ERROR: Could not connect. " . mysqli_connect_error());
@@ -36,6 +38,44 @@ if(isset($_REQUEST["term"])){
      
     // Close statement
     mysqli_stmt_close($stmt);
+}
+
+//submit nupu vajutusel kuvab kõik tulemused
+function searchFunction(){
+    global $conn;
+    global $inputresult;
+
+    if (isset($_POST["submitSearch"])){
+
+
+        $sql = "SELECT (Name, Platform, URL) FROM APP WHERE Name = '$inputresult'";
+        $stmt = mysqli_prepare($conn, $sql);
+        echo $conn->error;
+
+        if($stmt->execute()){
+            $result = mysqli_query($conn, $sql);
+
+            echo "<table>
+            <tr>
+            <th>Nimi</th>
+            <thPlatvorm</th>
+            <th>URL</th>
+            </table>";
+            
+            while( $row = mysqli_fetch_array($result)){
+                echo "<tr>";
+                echo "<td>" . $row['Name'] . "</td>";
+                echo "<td>" . $row['Platform'] . "</td>";
+                echo "<td>" . $row['URL'] . "</td>";
+                echo "</tr>";
+
+                echo "</table>";
+                mysqli_close($conn);
+            }
+
+        }
+        $stmt->close();
+    }
 }
  
 // close connection

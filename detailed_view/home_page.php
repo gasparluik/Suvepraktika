@@ -1,3 +1,6 @@
+<?php
+require("fetch.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -78,5 +81,6 @@ $(document).ready(function(){
         <button type="button" id="submitSearch" name="submitSearch">Otsi</button>
         <div class="result"></div>
     </div>
+    <?php echo searchFunction(); ?>
 </body>
 </html>

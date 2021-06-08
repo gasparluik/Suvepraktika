@@ -4,4 +4,4 @@ $serverhost = 'localhost';
 $serverusername = 'if20';
 $serverpassword = 'if20';
 
-$conn = mysqli_connect($serverhost, $serverusername, $serverpassword, $database); //ühendus andmebaasiga
+$conn = mysqli_connect($GLOBALS["serverhost"], $GLOBALS["serverusername"], $GLOBALS["serverpassword"], $GLOBALS["database"]); //ühendus andmebaasiga
