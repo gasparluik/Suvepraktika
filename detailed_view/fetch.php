@@ -2,7 +2,7 @@
 require("config.php");
 
 $output = '';
-$sql = "SELECT * FROM App WHERE Name LIKE '%".$_POST["search"]."%'";
+$sql = "SELECT * FROM App WHERE Name LIKE '%".$_POST['search']."%'";
 $result = mysqli_query($connect, $sql);
 if(mysqli_num_rows($result) > 0){
     $output .= '<h4 align = "center">Search Result</h4>';
