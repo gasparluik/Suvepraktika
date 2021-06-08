@@ -4,11 +4,11 @@
     $database = "if20_liisa_mi_1";
 
     $conn = new mysqli($serverhost, $serverusername, $serverpassword, $database);
-    $stmt = $conn->prepare("SELECT app_id, appl_name, app_url, url_change, app_platform, app_actual_address, app_tech_contact, app_in_server, app_version, 
+    $stmt = $conn->prepare("SELECT app_id, appl_name, app_url, app_platform, app_actual_address, app_tech_contact, app_in_server, app_version, 
     app_client, app_comment FROM app_info");
 
     echo $conn->error;
-    $stmt->bind_result($idfromdb, $namefromdb, $urlfromdb, $changetimefromdb, $platformfromdb, $addressfromdb, $contactfromdb, $serverfromdb, $versionfromdb, 
+    $stmt->bind_result($idfromdb, $namefromdb, $urlfromdb, $platformfromdb, $addressfromdb, $contactfromdb, $serverfromdb, $versionfromdb, 
     $clientfromdb, $commentfromdb);
     $stmt->execute();
     $apphtml = "\t <ol> \n ";
@@ -30,13 +30,10 @@
     {
         $conn = new mysqli($serverhost, $serverusername, $serverpassword, $database);
         $url = $_POST['urlinput'];
-        $change = date('Y-m-d H:i:s');
 
         $query = "UPDATE `app_info` SET `app_url` = '".$url."' WHERE `app_id` = '".$idfromdb."'";
-        $timequery = "UPDATE `app_info` SET `url_change` = '".$change."' WHERE `app_id` = '".$idfromdb."'";
 
         $result = mysqli_query($conn, $query);
-        $timeresult = mysqli_query($conn, $timequery);
 
         $stmt->close();
         $conn->close();
@@ -132,6 +129,17 @@
         $stmt->close();
         $conn->close();
     }
+    if(isset($_POST['deletebutton']))
+    {
+        $conn = new mysqli($serverhost, $serverusername, $serverpassword, $database);
+
+        $query = "DELETE FROM `app_info` WHERE `app_id` = '".$idfromdb."'";
+
+        $result = mysqli_query($conn, $query);
+
+        $stmt->close();
+        $conn->close();
+    }
 ?>
 <!DOCTYPE html>
 <link rel="stylesheet" type="text/css" href="app_info.css">
@@ -145,7 +153,9 @@
         <div id="container_one"></div>
         <div id="container_two">
             <div id="content">
-            <h2><?php echo $namefromdb?></h2>
+            <div id="titlecontainer">
+                    <h2 id="title"><?php echo $namefromdb?></h2>
+                </div>
             <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
                 <label for="urlinput">URL: </label>
                 <input type="text" name="urlinput" id="urlinput" placeholder="<?php echo $urlfromdb ?>">
@@ -188,7 +198,14 @@
                 <input type="submit" name="commentsubmit" value="✓">
             </form>
             </div>
-	        <ul><button><a href="app_info.php">Salvesta</a></button></ul>
+            <div id="buttoncontainer">
+	            <button><a href="app_info.php">Salvesta</a></button>
+            </div>
+            <div id="buttoncontainer">
+                <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+                    <input type="submit" name="deletebutton" id ="deletebutton" value="Kustuta rakendus">
+                </form>
+            </div>
             </div>
         </div>
     </div>

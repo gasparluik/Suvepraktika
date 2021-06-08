@@ -1,3 +1,7 @@
+body {
+    font-family: Helvetica;
+  }
+
 #logoimage {
     text-align: center;
 }
@@ -14,18 +18,25 @@ label {
 
 input[type=text] {
     width: 180px;
+    justify-content: right;
 }
 
-input[type="submit"] {
+input[type="submit"]:not(#deletebutton) {
+    width: 30px;
+    font-size: 16px;
+    border-radius: 5px;
+    color: #FFFFFF;
     background-color: rgb(115, 216, 115);
-    outline-color: rgb(115, 216, 115);
+    border-color: rgb(115, 216, 115);
+    border-style: solid;
 }
 
 textarea {
+    font-size: 16px;
+    font-family: Helvetica;
     margin-top: 2%;
-    width: 140px;
-    height: 100px;
     width: 180px;
+    height: 100px;
 }
 
 #container {
@@ -52,12 +63,12 @@ textarea {
 }
 
 #content {
-    text-align: center;
     font-size: 22px;
 }
 
 a {
-    color: #FFFFFC;
+    color: #FFFFFF;
+    text-decoration: none;
 }
 
 button {
@@ -66,4 +77,46 @@ button {
     font-size: 16px;
     border-radius: 10px;
     background-color: #386FA4;
+    border-color: #386FA4;
+    border-style: solid;
 }
+
+#analysis {
+    width: 150px;
+    height: 40px;
+    font-size: 16px;
+    border-radius: 10px;
+    background-color: #D6D30E;
+    border-color: #D6D30E;
+    border-style: solid;
+}
+
+ul {
+    text-align: left;
+}
+
+form, ul {
+    margin: 15px 0 15px 5%;
+}
+
+#title {
+    text-align: center;
+}
+
+#buttoncontainer {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+#deletebutton {
+    width: 150px;
+    height: 40px;
+    font-size: 16px;
+    border-radius: 10px;
+    color: #FFFFFF;
+    background-color: #DD2424;
+    border-color: #DD2424;
+    border-style: solid;
+}
+

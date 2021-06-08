@@ -4,17 +4,15 @@
     $database = "if20_liisa_mi_1";
 
     $conn = new mysqli($serverhost, $serverusername, $serverpassword, $database);
-    $stmt = $conn->prepare("SELECT appl_name, app_url, url_change, app_platform, app_actual_address, app_tech_contact, app_in_server, app_version, app_client, app_comment FROM app_info");
+    $stmt = $conn->prepare("SELECT appl_name, app_url, app_platform, app_actual_address, app_tech_contact, app_in_server, app_version, app_client, app_comment FROM app_info");
 
     echo $conn->error;
-    $stmt->bind_result($namefromdb, $urlfromdb, $changetimefromdb, $platformfromdb, $addressfromdb, $contactfromdb, $serverfromdb, $versionfromdb, $clientfromdb, $commentfromdb);
+    $stmt->bind_result($namefromdb, $urlfromdb, $platformfromdb, $addressfromdb, $contactfromdb, $serverfromdb, $versionfromdb, $clientfromdb, $commentfromdb);
     $stmt->execute();
     $apphtml = "\t <ol> \n "; //
     while($stmt->fetch()){
-        $apphtml .= "<ul>" .$namefromdb ." \n";
         $apphtml .= "<ul> \n";
         $apphtml .= "<ul>URL: " .$urlfromdb ."</ul> \n";
-        $apphtml .= "<ul>URLi muudeti viimati: " .$changetimefromdb ."</ul> \n";
         $apphtml .= "<ul>Platvorm: " .$platformfromdb ."</ul> \n";
         $apphtml .= "<ul>Serveri tegelik aadress: " .$addressfromdb ."</ul> \n";
         $apphtml .= "<ul>Tehniline kontakt: " .$contactfromdb ."</ul> \n";
@@ -42,9 +40,16 @@
         <div id="container_one"></div>
         <div id="container_two">
             <div id="content">
-            <h2><?php echo $namefromdb?></h2>
-            <?php echo $apphtml; ?>
-            <ul><button><a href="change_app_info.php">Muuda andmeid</a></button></ul>
+                <div id="titlecontainer">
+                    <h2 id="title"><?php echo $namefromdb?></h2>
+                </div>
+                <?php echo $apphtml; ?>
+                <div id="buttoncontainer">
+                    <button id="analysis"><a>Analüüs</a></button>
+                </div>
+                <div id="buttoncontainer">
+                    <button><a href="change_app_info.php">Muuda andmeid</a></button>
+                </div>
             </div>
         </div>
     </div>
