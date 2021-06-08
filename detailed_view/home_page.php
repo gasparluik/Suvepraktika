@@ -25,15 +25,15 @@
             <div id="result"></div>
         </div>
 
-<script> // script mis loeb reaalajas klaviatuuri vajutusi
+<script type="text/javascript"> // script mis loeb reaalajas klaviatuuri vajutusi
     $(document).ready(function(){
-        $('#search').keyup(function(){
+        $("#search").keypress(function(){
             var txt = $(this).val();
             if(txt != ''){
                 $('$result').html('');
                 $.ajax({
-                    url: "fetch.php",
-                    method: "post",
+                    type: 'POST',
+                    url: 'fetch.php',
                     data:{search:txt},
                     dataType:"text",
                     success:function(data)

@@ -3,7 +3,7 @@ require("config.php");
 
 $output = '';
 $sql = "SELECT * FROM App WHERE Name LIKE '%".$_POST['search']."%'";
-$result = mysqli_query($connect, $sql);
+$result = mysqli_query($conn, $sql);
 if(mysqli_num_rows($result) > 0){
     $output .= '<h4 align = "center">Search Result</h4>';
     $output .= '<div class = "table-responsive">
