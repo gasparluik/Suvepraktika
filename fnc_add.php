@@ -1,27 +1,42 @@
 
 <?php
 //POST submittimise funktsioon String ja Int väärtustele
-require ("config.php");
-$database = "if20_gaspar_l_1u";
-$conn = new mysqli($GLOBALS["serverhost"], $serverusername, $serverpassword, $database); //connection to mySql
+//require ("config.php");
+$database = 'if20_gaspar_l_1u';
+$serverhost = 'localhost';
+$serverusername = 'if20';
+$serverpassword = 'if20';
+//$conn = new mysqli($GLOBALS["serverhost"], $serverusername, $serverpassword, $database); //connection to mySql
+
+function addApplication($appName, $platform , $contact, $client, $url,  $version, $serverAddress, $serverPlace, $commentInput){
+	$conn = new mysqli($GLOBALS["serverhost"], $GLOBALS["serverusername"], $GLOBALS["serverpassword"], $GLOBALS["database"]);
+	$stmt = $conn->prepare("INSERT INTO App (Name, Platform, URL, Server_address, Server_place, Contact, Version, Comments, Client) VALUES(?,?,?,?,?,?,?,?,?)");
+	echo $conn->error;
+	$stmt->bind_param("sssssssss", $appName, $platform, $url, $serverAddress, $serverPlace, $contact, $version, $commentInput, $client);
+	$stmt->execute();
+	$stmt->close();
+	$conn->close();
+  }//addApplication lõppeb
 
 
 //lisa rakendus
-function addApplication($appName, $platform , $contact, $client, $url,  $version, $serverAddress, $serverPlace, $commentInput){
+/*function addApplication($appName, $platform , $contact, $client, $url,  $version, $serverAddress, $serverPlace, $commentInput){
 
 
     $date = date('Y-m-d H:i:s'); // timestamp
     if(isset($_POST["submitApp"])){
-        $conn = new mysqli($GLOBALS["serverhost"], $GLOBALS["serverusername"], $GLOBALS["serverpassword"], $GLOBALS["database"]);        $stmt = $conn->prepare("INSERT INTO App(Name, Platform, URL, Server_address, Server_place, Contact, Version, Comments, Client, Date) VALUES(?,?,?,?,?,?,?,?,?)");
+        $conn = new mysqli($GLOBALS["serverhost"], $GLOBALS["serverusername"], $GLOBALS["serverpassword"], $GLOBALS["database"]);
+        $stmt = $conn->prepare("INSERT INTO App(Name, Platform, URL, Server_address, Server_place, Contact, Version, Comments, Client) VALUES(?,?,?,?,?,?,?,?)");
         echo $conn->error;
 
-        $stmt->bind_param("ssssssssi",$appName, $platform, $url, $serverAddress, $serverPlace, $contact, $version, $commentInput, $client, $date);
+        $stmt->bind_param("ssssssss",$appName, $platform, $url, $serverAddress, $serverPlace, $contact, $version, $commentInput, $client);
         $stmt->execute();
         $stmt->close();
         $conn->close();
 
     }
-}
+}*/
+
 //kommentaari kuvamise funktsioon
 function readComment(){
      //Esitleb rakendusega seotud kommentaari

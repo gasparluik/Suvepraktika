@@ -1,7 +1,18 @@
 <?php
 require ("fnc_add.php"); // basic post funktsioon
 
-//home.php sisesed muutujad
+$inputerror = "";
+//kui klikiti submit, siis ...
+if(isset($_POST["submitApp"])){
+  if(empty($_POST["appName"]) or empty($_POST["contact"]) or empty($_POST["url"]) or empty($_POST["serverPlace"])){
+	$inputerror .= "Osa infot on sisestamata! ";
+  }
+  if(empty($inputerror)){
+	  addApplication($_POST["appName"], $_POST["platform"], $_POST["contact"], $_POST["client"], $_POST["url"], $_POST["version"], $_POST["serverAddress"], $_POST["serverPlace"], $_POST["commentInput"]);
+  }
+}
+
+/*//home.php sisesed muutujad
 $inputerror ="";
 //Funktsiooni sees kasutatavad POST muutujad
 
@@ -30,7 +41,7 @@ if(isset($_POST["submitApp"])){
 	}
 }
 
-require ("header.php"); //basic html algus utf estiga jne
+require ("header.php"); //basic html algus utf estiga jne */
 //php lõpp
 ?> 
   <h1>Monitory rakenduse lisamine</h1>
@@ -45,7 +56,7 @@ require ("header.php"); //basic html algus utf estiga jne
 	<input type="text" name="contact" id="contact" placeholder = "Kes vastutab?" required>
 	<br>
 	<label for="client">Klient</label>
-	<input type="text" name="client" id="client" placeholder="Lavastaja nimi" required>
+	<input type="text" name="client" id="client" placeholder="Kliendi nimi" required>
 	<br>
 	<p>Platvorm</p><input type="text" name="platform" id="platform" placeholder="Platvorm.." required>
 	<p>URL</p><input type="text" name="url" id="url" value="url" required> <!peaks muutma type text to link? >
