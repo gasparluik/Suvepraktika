@@ -26,7 +26,7 @@
     </label>
     <input id="password" class='lf--input' placeholder='Parool' type='password'>
   </div>
-  <input class='lf--submit' type='submit' value='LOGIN'>
+  <input class='lf--submit' type='submit' value='login'>
 </form>
 <a class='lf--forgot' href='http://greeny.cs.tlu.ee/~lisajar/testid/Login/Laravel/forgot-password.php'>Unustasid salasõna?</a>
 

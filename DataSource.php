@@ -1,21 +1,12 @@
 <?php
 require 'config.php';
 /**
- * Copyright (C) Phppot
- *
- * Distributed under 'The MIT License (MIT)'
- * In essense, you can do commercial use, modify, distribute and private use.
- * Though not mandatory, you are requested to attribute Phppot URL in your code or website.
- */
-
-/**
  * Generic datasource class for handling DB operations.
  * Uses MySqli and PreparedStatements.
  *
  * @version 2.7 - PDO connection option added
  */
-class DataSource
-{
+class DataSource{
     public $host = db_host;
     public $user = db_user;
     public $pass = db_pass;
