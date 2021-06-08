@@ -1,6 +1,4 @@
 <?php
-require ("header.php"); //basic html algus utf estiga jne
-require ("fnc_add.php"); // basic post funktsioon
 
 
 //home.php sisesed muutujad
@@ -20,6 +18,9 @@ $serverAddress = $_POST["serverAddress"];
 $serverPlace = $_POST["serverPlace"];
 $commentInput = $_POST["commentInput"];
 $platform = $_POST["platform"];
+
+require ("header.php"); //basic html algus utf estiga jne
+require ("fnc_add.php"); // basic post funktsioon
 
 //Kontrolli, et salvestamisel, ei oleks nõutud välja tühjad
 if(isset($_POST["submitApp"])){

@@ -17,9 +17,6 @@
         <div id="container_one"></div>
         <div id="container_two">
             <div id="content">
-            <h2><?php echo $namefromdb?></h2>
-            <?php echo $apphtml; ?>
-            <ul><button><a href="add_app.php">Muuda andmeid</a></button></ul>
             </div>
         </div>
     </div>
