@@ -67,9 +67,8 @@ require ("header.php"); //basic html algus utf estiga jne */
 	<br>
 	<p>Serveri asukoht</p><input type="text" name="serverPlace" id="serverPlace" placeholder="Serveri asukoht" required>
 	<br>
-	<textarea rows="10" cols="80" name="commentInput" id="commentInput" placeholder="Kommentaarid....."><?php echo $comment; ?></textarea>
+	<textarea rows="10" cols="80" name="commentInput" id="commentInput" placeholder="Kommentaarid....."></textarea>
 	<br>
-
 	<input type="submit" name="submitApp" value="Lisa rakendus">
   </form>
   <p><?php
