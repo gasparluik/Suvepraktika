@@ -6,7 +6,6 @@
         <meta http-equiv = "Content-Type" content = "text/html; charset = utf-8" />
         <title>Searchbar</title>
         <script src ="jquery.js"></script>
-        <script src ="js/bootstrap.js"></script>
         <link href="universalCSS.css" rel="stylesheet"/>
     </head>
     <body>  
