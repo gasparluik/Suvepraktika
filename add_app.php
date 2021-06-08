@@ -61,13 +61,14 @@ require ("header.php"); //basic html algus utf estiga jne */
 	<p>Platvorm</p><input type="text" name="platform" id="platform" placeholder="Platvorm.." required>
 	<p>URL</p><input type="text" name="url" id="url" value="url" required> <!peaks muutma type text to link? >
 	<br>
-	<p>Versioon/p><input type="text" name="version" id="version" placeholder="Versioon">
+	<p>Versioon</p><input type="text" name="version" id="version" placeholder="Versioon">
 	<br>
 	<p>Serveri aadress</p><input type="text" name="serverAddress" id="serverAddress" placeholder="Serveri aadress" required>
 	<br>
 	<p>Serveri asukoht</p><input type="text" name="serverPlace" id="serverPlace" placeholder="Serveri asukoht" required>
 	<br>
 	<textarea rows="10" cols="80" name="commentInput" id="commentInput" placeholder="Kommentaarid....."><?php echo $comment; ?></textarea>
+	<br>
 
 	<input type="submit" name="submitApp" value="Lisa rakendus">
   </form>

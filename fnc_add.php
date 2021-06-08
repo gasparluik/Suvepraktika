@@ -9,13 +9,21 @@ $serverpassword = 'if20';
 //$conn = new mysqli($GLOBALS["serverhost"], $serverusername, $serverpassword, $database); //connection to mySql
 
 function addApplication($appName, $platform , $contact, $client, $url,  $version, $serverAddress, $serverPlace, $commentInput){
+    $notice = null;
 	$conn = new mysqli($GLOBALS["serverhost"], $GLOBALS["serverusername"], $GLOBALS["serverpassword"], $GLOBALS["database"]);
 	$stmt = $conn->prepare("INSERT INTO App (Name, Platform, URL, Server_address, Server_place, Contact, Version, Comments, Client) VALUES(?,?,?,?,?,?,?,?,?)");
 	echo $conn->error;
 	$stmt->bind_param("sssssssss", $appName, $platform, $url, $serverAddress, $serverPlace, $contact, $version, $commentInput, $client);
 	$stmt->execute();
+    if($stmt->execute()){
+		$notice = "kõik on ok";
+	} else {
+		$notice = $stmt->error;
+	}
+
 	$stmt->close();
 	$conn->close();
+    return $notice;
   }//addApplication lõppeb
 
 
