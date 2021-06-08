@@ -8,7 +8,7 @@ $inputerror ="";
 
 
 //fnc_add funkstioonid
-$submit = addApplication($_POST["appName"],$_POST["platform"], $_POST["contact"], $_POST["client"], $_POST["url"],$_POST["version"], $_POST["serverAddress"],$_POST["serverPlace"],$_POST["commentInput"]);
+
 $comment = readComment(); //loeb kommentaare
 
 $appName = $_POST["appName"];
@@ -25,8 +25,9 @@ $platform = $_POST["platform"];
 if(isset($_POST["submitApp"])){
 	if(empty($appName or $contact or $client or $url or $serverAddress or $serverPlace)){
 		$inputerror .= "Väli on tühi!";
+	} else{
+		addApplication($_POST["appName"],$_POST["platform"], $_POST["contact"], $_POST["client"], $_POST["url"],$_POST["version"], $_POST["serverAddress"],$_POST["serverPlace"],$_POST["commentInput"]);
 	}
-	echo $inputerror;
 }
 
 require ("header.php"); //basic html algus utf estiga jne
@@ -59,7 +60,10 @@ require ("header.php"); //basic html algus utf estiga jne
 
 	<input type="submit" name="submitApp" value="Lisa rakendus">
   </form>
-  <p><?php echo $inputerror; ?></p>
+  <p><?php
+  echo $inputerror;
+  //echo $submit = addApplication($_POST["appName"],$_POST["platform"], $_POST["contact"], $_POST["client"], $_POST["url"],$_POST["version"], $_POST["serverAddress"],$_POST["serverPlace"],$_POST["commentInput"]);
+  ?></p>
 
 
 </body>
