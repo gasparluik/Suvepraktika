@@ -69,8 +69,13 @@ $(document).ready(function(){
 </script>
 </head>
 <body>
+    <div class = "container">
+    <br>
+    <h2>Rakenduse otsimine</h2>
+    </div>
     <div class="search-box">
-        <input type="text" autocomplete="off" placeholder="Search country..." />
+        <input type="text" autocomplete="off" placeholder="Otsi rakendust..." />
+        <button type="button" id="submitSearch" name="submitSearch">Otsi</button>
         <div class="result"></div>
     </div>
 </body>
