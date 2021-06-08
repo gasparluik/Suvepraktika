@@ -1,6 +1,7 @@
 <?php
 	require_once 'class.php';
 	if(ISSET($_POST['submit'])){
+		echo 'olen siin';
 		$conn = new db_class();
 		$username = $_POST['username'];
 		$password = $_POST['password'];
