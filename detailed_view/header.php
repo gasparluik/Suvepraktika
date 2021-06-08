@@ -11,5 +11,5 @@
         <div id="container_two">
             <div id="content">
             <div id="titlecontainer">
-                    <h2 id="title"><?php echo "Rakenduse lisamine"?></h2>
-                </div>
+                    <h2 id="title"><?php echo "Detailne vaade"?></h2>
+            </div>
