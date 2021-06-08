@@ -4,6 +4,15 @@
 require ("config.php");
 $database = "if20_gaspar_l_1u";
 $conn = new mysqli($GLOBALS["serverhost"], $serverusername, $serverpassword, $database); //connection to mySql
+$appName = $_POST["appName"];
+$contact = $_POST["contact"];
+$client = $_POST["client"];
+$url = $_POST["url"];
+$version = $_POST["version"];
+$serverAddress = $_POST["serverAddress"];
+$serverPlace = $_POST["serverPlace"];
+$commentInput = $_POST["commentInput"];
+$platform = $_POST["platform"];
 
 
 //lisa rakendus

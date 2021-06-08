@@ -1,5 +1,4 @@
 <?php
-require ("header.php"); //basic html algus utf estiga jne
 require ("fnc_add.php"); // basic post funktsioon
 
 //home.php sisesed muutujad
@@ -28,7 +27,7 @@ if(isset($_POST["submitApp"])){
 	echo $inputerror;
 }
 
-
+require ("header.php"); //basic html algus utf estiga jne
 //php lõpp
 ?> 
   <h1>Monitory rakenduse lisamine</h1>
