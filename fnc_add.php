@@ -4,19 +4,12 @@
 require ("config.php");
 $database = "if20_gaspar_l_1u";
 $conn = new mysqli($GLOBALS["serverhost"], $serverusername, $serverpassword, $database); //connection to mySql
-$appName = $_POST["appName"];
-$contact = $_POST["contact"];
-$client = $_POST["client"];
-$url = $_POST["url"];
-$version = $_POST["version"];
-$serverAddress = $_POST["serverAddress"];
-$serverPlace = $_POST["serverPlace"];
-$commentInput = $_POST["commentInput"];
-$platform = $_POST["platform"];
 
 
 //lisa rakendus
 function addApplication($appName, $platform , $contact, $client, $url,  $version, $serverAddress, $serverPlace, $commentInput){
+
+
     $date = date('Y-m-d H:i:s'); // timestamp
     if(isset($_POST["submitApp"])){
         $conn = new mysqli('serverhost', 'serverusername', 'serverpassword', 'database'); //connection to mySql

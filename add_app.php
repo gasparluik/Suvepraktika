@@ -4,6 +4,7 @@ require ("fnc_add.php"); // basic post funktsioon
 //home.php sisesed muutujad
 $inputerror ="";
 //Funktsiooni sees kasutatavad POST muutujad
+
 $appName = $_POST["appName"];
 $contact = $_POST["contact"];
 $client = $_POST["client"];
@@ -14,9 +15,8 @@ $serverPlace = $_POST["serverPlace"];
 $commentInput = $_POST["commentInput"];
 $platform = $_POST["platform"];
 
-
 //fnc_add funkstioonid
-$submit = addApplication($appName, $contact, $platform, $client, $url, $version, $serverAddress, $serverPlace, $commentInput);
+$submit = addApplication($_POST["appName"],$_POST["platform"], $_POST["contact"], $_POST["client"], $_POST["url"],$_POST["version"], $_POST["serverAddress"],$_POST["serverPlace"],$_POST["commentInput"]);
 $comment = readComment(); //loeb kommentaare
 
 //Kontrolli, et salvestamisel, ei oleks nõutud välja tühjad
