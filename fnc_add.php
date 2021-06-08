@@ -6,11 +6,21 @@ $database = 'if20_gaspar_l_1u';
 $serverhost = 'localhost';
 $serverusername = 'if20';
 $serverpassword = 'if20';
+//$conn = new mysqli($serverhost, $serverusername, $serverpassword, $database);
+
 //$conn = new mysqli($GLOBALS["serverhost"], $serverusername, $serverpassword, $database); //connection to mySql
 
 function addApplication($appName, $platform , $contact, $client, $url,  $version, $serverAddress, $serverPlace, $commentInput){
     $notice = null;
-	$conn = new mysqli($GLOBALS["serverhost"], $GLOBALS["serverusername"], $GLOBALS["serverpassword"], $GLOBALS["database"]);
+    $database = 'if20_gaspar_l_1u';
+    $serverhost = 'localhost';
+    $serverusername = 'if20';
+    $serverpassword = 'if20';
+    $conn = new mysqli($serverhost, $serverusername, $serverpassword, $database);
+
+    if ($conn->connection_error){
+        die("Connection failed to database:" . $conn->connection_error);
+    }
 	$stmt = $conn->prepare("INSERT INTO App (Name, Platform, URL, Server_address, Server_place, Contact, Version, Comments, Client) VALUES(?,?,?,?,?,?,?,?,?)");
 	echo $conn->error;
 	$stmt->bind_param("sssssssss", $appName, $platform, $url, $serverAddress, $serverPlace, $contact, $version, $commentInput, $client);
