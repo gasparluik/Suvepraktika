@@ -88,7 +88,7 @@ require ("header.php"); //basic html algus utf estiga jne */
 	<input type="text" name="client" id="client" placeholder="Kliendi nimi" required>
 	<br>
 	<p>Platvorm</p><input type="text" name="platform" id="platform" placeholder="Platvorm.." required>
-	<p>URL</p><input type="text" name="url" id="url" value="url" required> <!peaks muutma type text to link? >
+	<p>URL</p><input type="text" name="url" id="url" placeholder = "sisesta url" required> <!peaks muutma type text to link? >
 	<br>
 	<p>Versioon</p><input type="text" name="version" id="version" placeholder="Versioon">
 	<br>
