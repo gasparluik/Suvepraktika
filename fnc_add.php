@@ -3,7 +3,7 @@
 //POST submittimise funktsioon String ja Int väärtustele
 require ("config.php");
 $database = "if20_gaspar_l_1u";
-$conn = new mysqli($GLOBALS["serverhost"], $username, $password, $database); //connection to mySql
+$conn = new mysqli($GLOBALS["serverhost"], $serverusername, $serverpassword, $database); //connection to mySql
 
 
 //lisa rakendus

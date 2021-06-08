@@ -1,6 +1,7 @@
 
 <!DOCTYPE html> 
 <! Et igal lehel oleks sama algus ja lihtsustada HTML lehe tegemist > 
+<link rel="stylesheet" type="text/css" href="universalCSS.css">
 <html lang="et">
 <head>
 	<meta charset="utf-8"/>

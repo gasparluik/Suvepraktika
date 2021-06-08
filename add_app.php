@@ -3,11 +3,6 @@
 
 //home.php sisesed muutujad
 $inputerror ="";
-
-//fnc_add funkstioonid
-$submit = addApplication($appName, $contact, $platform, $client, $url, $version, $serverAddress, $serverPlace, $commentInput);
-$comment = readComment(); //loeb kommentaare
-
 //Funktsiooni sees kasutatavad POST muutujad
 $appName = $_POST["appName"];
 $contact = $_POST["contact"];
@@ -18,6 +13,10 @@ $serverAddress = $_POST["serverAddress"];
 $serverPlace = $_POST["serverPlace"];
 $commentInput = $_POST["commentInput"];
 $platform = $_POST["platform"];
+
+//fnc_add funkstioonid
+$submit = addApplication($appName, $contact, $platform, $client, $url, $version, $serverAddress, $serverPlace, $commentInput);
+$comment = readComment(); //loeb kommentaare
 
 require ("header.php"); //basic html algus utf estiga jne
 require ("fnc_add.php"); // basic post funktsioon
