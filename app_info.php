@@ -19,7 +19,10 @@
         $apphtml .= "<ul>Asukoht serveris: " .$serverfromdb ."</ul> \n";
         $apphtml .= "<ul>Rakenduse versioon: " .$versionfromdb ."</ul> \n";
         $apphtml .= "<ul>Tellija: " .$clientfromdb ."</ul> \n";
+<<<<<<< Updated upstream
         $apphtml .= "<ul>Kommentaar: " .$commentfromdb ."</ul> \n";
+=======
+>>>>>>> Stashed changes
         $apphtml .= "</ul> \n";
         $apphtml .= "</ul> \n";
     }
@@ -43,12 +46,32 @@
                 <div id="titlecontainer">
                     <h2 id="title"><?php echo $namefromdb?></h2>
                 </div>
+<<<<<<< Updated upstream
                 <?php echo $apphtml; ?>
                 <div id="buttoncontainer">
                     <button id="analysis"><a>Analüüs</a></button>
                 </div>
                 <div id="buttoncontainer">
                     <button><a href="change_app_info.php">Muuda andmeid</a></button>
+=======
+                <div id="infocontainer">
+                    <?php echo $apphtml; ?>
+                </div>
+                <div id="comment_analysiscontainer">
+                    <div id="commentcontainer">
+                        <div id="commentarea">
+                            <?php echo $commentfromdb; ?>
+                        </div>
+                    </div>
+                    <div id="analysis_makechanges">
+                        <div id="buttoncontainer">
+                            <button id="analysis"><a>Analüüs</a></button>
+                        </div>
+                        <div id="buttoncontainer">
+                            <button><a href="change_app_info.php">Muuda andmeid</a></button>
+                        </div>
+                    </div>
+>>>>>>> Stashed changes
                 </div>
             </div>
         </div>

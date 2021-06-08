@@ -31,6 +31,7 @@ input[type="submit"]:not(#deletebutton) {
     border-style: solid;
 }
 
+<<<<<<< Updated upstream
 textarea {
     font-size: 16px;
     font-family: Helvetica;
@@ -39,13 +40,19 @@ textarea {
     height: 100px;
 }
 
+=======
+>>>>>>> Stashed changes
 #container {
     display: flex;
     justify-content: space-between;
 }
 
 #container_one {
+<<<<<<< Updated upstream
     background-color: #FFFFFC;
+=======
+    background-color: #FFFFFF;
+>>>>>>> Stashed changes
     width: 17.5%;
     height: 700px;
     border-radius: 50px;
@@ -54,7 +61,11 @@ textarea {
 }
 
 #container_two {
+<<<<<<< Updated upstream
     background-color: #FFFFFC;
+=======
+    background-color: #FFFFFF;
+>>>>>>> Stashed changes
     width: 57.5%;
     height: 700px;
     border-radius: 50px;
@@ -95,14 +106,53 @@ ul {
     text-align: left;
 }
 
+<<<<<<< Updated upstream
 form, ul {
+=======
+form:not(#deletebuttonform), ul {
+>>>>>>> Stashed changes
     margin: 15px 0 15px 5%;
 }
 
 #title {
+<<<<<<< Updated upstream
     text-align: center;
 }
 
+=======
+    margin-top: 35px;
+    text-align: center;
+}
+
+#comment_analysiscontainer {
+    margin-top: 150px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+#commentcontainer {
+    margin-left: 5%;
+    width: 50%;
+    height: 100px;
+}
+
+#commentarea, #commentinput {
+    color: #7a7a7a;
+    word-wrap: break-word;
+    border-style: solid;
+    border-width: thin;
+    font-size: 16px;
+    border-color: #a8a8a8;
+    min-width: 100px;
+    width: 100%;
+    min-height: 20px;
+    height: 100%;
+    padding: 2px 5px 2px 5px;
+    background-color: #ececec;
+}
+
+>>>>>>> Stashed changes
 #buttoncontainer {
     display: flex;
     justify-content: center;
@@ -120,3 +170,14 @@ form, ul {
     border-style: solid;
 }
 
+<<<<<<< Updated upstream
+=======
+#analysis_makechanges {
+    margin-right: 10%;
+}
+
+#infocontainer {
+    margin-top: 50px;
+}
+
+>>>>>>> Stashed changes

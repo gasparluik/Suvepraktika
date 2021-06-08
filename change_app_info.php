@@ -153,6 +153,7 @@
         <div id="container_one"></div>
         <div id="container_two">
             <div id="content">
+<<<<<<< Updated upstream
             <div id="titlecontainer">
                     <h2 id="title"><?php echo $namefromdb?></h2>
                 </div>
@@ -206,6 +207,66 @@
                     <input type="submit" name="deletebutton" id ="deletebutton" value="Kustuta rakendus">
                 </form>
             </div>
+=======
+                <div id="titlecontainer">
+                    <h2 id="title"><?php echo $namefromdb?></h2>
+                </div>
+                <div id="infocontainer">
+                    <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+                        <label for="urlinput">URL: </label>
+                        <input type="text" name="urlinput" id="urlinput" placeholder="<?php echo $urlfromdb ?>">
+                        <input type="submit" name="urlsubmit" value="✓">
+                    </form>
+                    <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+                        <label for="platforminput">Platvorm: </label>
+                        <input type="text" name="platforminput" id="platforminput" placeholder="<?php echo $platformfromdb?>">
+                        <input type="submit" name="platformsubmit" value="✓">
+                    </form>
+                    <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+                        <label for="addressinput">Serveri tegelik aadress: </label>
+                        <input type="text" name="addressinput" id="addressinput" placeholder="<?php echo $addressfromdb?>">
+                        <input type="submit" name="addresssubmit" value="✓">
+                    </form>
+                    <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+                        <label for="contactinput">Tehniline kontakt: </label>
+                        <input type="text" name="contactinput" id="contactinput" placeholder="<?php echo $contactfromdb?>">
+                        <input type="submit" name="contactsubmit" value="✓">
+                    </form>
+                    <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+                        <label for="serverinput">Asukoht serveris: </label>
+                        <input type="text" name="serverinput" id="serverinput" placeholder="<?php echo $serverfromdb?>">
+                        <input type="submit" name="serversubmit" value="✓">
+                    </form>
+                    <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+                        <label for="versioninput">Rakenduse versioon: </label>
+                        <input type="text" name="versioninput" id="versioninput" placeholder="<?php echo $versionfromdb?>">
+                        <input type="submit" name="versionsubmit" value="✓">
+                    </form>
+                    <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+                        <label for="clientinput">Tellija: </label>
+                        <input type="text" name="clientinput" id="clientinput" placeholder="<?php echo $clientfromdb?>">
+                        <input type="submit" name="clientsubmit" value="✓">
+                    </form>
+                </div>
+                <div id="comment_analysiscontainer">
+                    <div id="commentcontainer">
+                        <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+                            <textarea type="text" name="commentinput" id="commentinput" placeholder="<?php echo $commentfromdb?>"></textarea>
+                            <input type="submit" name="commentsubmit" value="✓">
+                        </form>
+                    </div>
+                    <div id="analysis_makechanges">
+                        <div id="buttoncontainer">
+                            <button><a href="app_info.php">Salvesta</a></button>
+                        </div>
+                        <div id="buttoncontainer">
+                            <form method="POST" id="deletebuttonform" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+                                <input type="submit" name="deletebutton" id ="deletebutton" value="Kustuta rakendus">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+>>>>>>> Stashed changes
             </div>
         </div>
     </div>
