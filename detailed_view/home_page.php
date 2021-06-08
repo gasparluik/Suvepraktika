@@ -5,7 +5,7 @@
     <head>
         <meta http-equiv = "Content-Type" content = "text/html; charset = utf-8" />
         <title>Searchbar</title>
-        <script src ="jquery.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <link href="universalCSS.css" rel="stylesheet"/>
     </head>
     <body>  
