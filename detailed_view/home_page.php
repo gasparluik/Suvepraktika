@@ -13,6 +13,9 @@
         <div class="container">
             <br>
             <h2 align = "center">Ajax Live Data Search </h2>
+            <ul>
+            <li><a href="add_page.php">Lisa rakendus</a>
+            </li>
             <div class="form-group">
                 <div class="input-group">
                     <span class="input-group-addon">Osting</span>
