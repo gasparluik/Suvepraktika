@@ -30,10 +30,8 @@ if( isset($_POST['submitApp'])){ //kui vajutatakse submiti...
 
 require("header.php");
 ?> 
-  <h1>Monitory rakenduse lisamine</h1>
-
   <hr>
-  <form method="POST">
+  <form method="POST"><?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>
 	<label for="name">Nimetus</label>
 	<input type="text" name="name" id="name" placeholder="Nimetus" required>
 	<br>

@@ -13,7 +13,7 @@ body {
 label {
     display: inline-block;
     text-align: left;
-    width: 250px;
+    width: 220px;
 }
 
 input[type=text] {
@@ -22,7 +22,7 @@ input[type=text] {
 }
 
 input[type="submit"]:not(#deletebutton) {
-    width: 30px;
+    width: autopx;
     font-size: 16px;
     border-radius: 5px;
     color: #FFFFFF;
