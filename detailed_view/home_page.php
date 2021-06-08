@@ -15,6 +15,7 @@
         font-size: 14px;
     }
     .search-box input[type="text"]{
+        align-content: center;
         height: 32px;
         padding: 5px 10px;
         border: 1px solid #CCCCCC;
