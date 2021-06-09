@@ -1,5 +1,7 @@
 <?php
 require("fetch.php");
+
+$searchfunction = searchFunction();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -81,6 +83,6 @@ $(document).ready(function(){
         <button type="button" id="submitSearch" name="submitSearch">Otsi</button>
         <div class="result"></div>
     </div>
-    <?php echo searchFunction(); ?>
+    <?php echo $searchfunction ?>
 </body>
 </html>
