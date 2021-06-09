@@ -55,7 +55,7 @@ $searchfunction = searchFunction();
 $(document).ready(function(){
     $('.search-box input[type="text"]').on("keyup input", function(){
         /* Get input value on change */
-        var inputVal = $(this).val();
+        var inputVal = $(this).val(); // see on input value?
         var resultDropdown = $(this).siblings(".result");
         if(inputVal.length){
             $.get("fetch.php", {term: inputVal}).done(function(data){
@@ -66,6 +66,8 @@ $(document).ready(function(){
             resultDropdown.empty();
         }
     });
+
+    inputVal = $inputresult;
     
     // Set search input value on click of result item
     $(document).on("click", ".result p", function(){
