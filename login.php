@@ -1,5 +1,14 @@
 <!DOCTYPE html>
+<html lang = "en">
+	<head>
+		<meta charset = "UTF-8" name = "viewport" content = "width-device=width, initial-scale=1"/>
+		<title>Monitory</title>
+		<link rel = "stylesheet" type = "text/css" href = "style.css" />
+	</head>
+<body>
+
 <form class='login-form'>
+<form method = "POST" action = "login_query.php">
   <div class="flex-row">
     <label class="lf--label" for="username">
       <svg x="0px" y="0px" width="12px" height="13px">
