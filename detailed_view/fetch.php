@@ -1,7 +1,7 @@
 <?php
 require("config.php"); //Attempt MySQL server connection.
 global $conn;
-$inputresult = $_POST["inputsearch"];
+
 
 if($conn === false){ //check connection
     die("ERROR: Could not connect. " . mysqli_connect_error());
@@ -38,6 +38,7 @@ if(isset($_REQUEST["term"])){
      
     // Close statement
     mysqli_stmt_close($stmt);
+    mysqli_close($conn);
 }
 
 //submit nupu vajutusel kuvab kõik tulemused
@@ -75,9 +76,10 @@ function searchFunction(){
 
         }
         $stmt->close();
+        $conn->close();
     }
 }
  
 // close connection
-mysqli_close($conn);
+
 ?>

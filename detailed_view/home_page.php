@@ -1,5 +1,7 @@
 <?php
 require("fetch.php");
+$inputresult = $_POST["inputsearch"];
+
 
 $searchfunction = searchFunction();
 ?>
