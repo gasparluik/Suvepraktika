@@ -31,7 +31,7 @@ if( isset($_POST['submitApp'])){ //kui vajutatakse submiti...
 require("header.php");
 ?> 
   <hr>
-  <form method="POST"><?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>
+  <form method="POST">
 	<label for="name">Nimetus</label>
 	<input type="text" name="name" id="name" placeholder="Nimetus" required>
 	<br>
