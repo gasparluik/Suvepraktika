@@ -50,7 +50,7 @@ if (isset($_POST['login'])){
  <div class="limiter">
  <div class="container-login100" style="background-color: #FFF;">
  <div class="wrap-login100">
- <form class="login100-form validate-form" action="index.php" method="POST">
+ <form class="login100-form validate-form" action="login.php" method="POST">
  <span class="login100-form-logo">
  DG
  </span>
