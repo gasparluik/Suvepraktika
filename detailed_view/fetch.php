@@ -1,7 +1,7 @@
 <?php
 require("config.php"); //Attempt MySQL server connection.
 global $conn;
-$inputresult = $_POST[".result"];
+$inputresult = $_POST["inputsearch"];
 
 if($conn === false){ //check connection
     die("ERROR: Could not connect. " . mysqli_connect_error());
