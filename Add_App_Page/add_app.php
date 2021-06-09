@@ -30,7 +30,6 @@ if( isset($_POST['submitApp'])){ //kui vajutatakse submiti...
 
 require("header.php");
 ?> 
-  <hr>
   <form method="POST">
 	<label for="name">Nimetus</label>
 	<input type="text" name="name" id="name" placeholder="Nimetus" required>
