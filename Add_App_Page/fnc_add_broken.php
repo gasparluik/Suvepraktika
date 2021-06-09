@@ -21,7 +21,7 @@ function addApplication($appName, $platform , $contact, $client, $url,  $version
     if ($conn->connection_error){
         die("Connection failed to database:" . $conn->connection_error);
     }
-	$stmt = $conn->prepare("INSERT INTO App (Name, Platform, URL, Server_address, Server_place, Contact, Version, Comments, Client) VALUES(?,?,?,?,?,?,?,?,?)");
+	$stmt = $conn->prepare("INSERT INTO App (name, platform, url, server_address, server_place, contact, version, comments, client) VALUES(?,?,?,?,?,?,?,?,?)");
 	echo $conn->error;
 	$stmt->bind_param("sssssssss", $appName, $platform, $url, $serverAddress, $serverPlace, $contact, $version, $commentInput, $client);
 	$stmt->execute();
@@ -61,7 +61,7 @@ function readComment(){
 	  $notice = null;
       $conn = new mysqli($GLOBALS["serverhost"], $GLOBALS["serverusername"], $GLOBALS["serverpassword"], $GLOBALS["database"]);
       //kas rakendusega on seotud mingi kommentaar, mida saab kuvada
-      $stmt = $conn->prepare("SELECT Comments FROM App WHERE Id = ?");
+      $stmt = $conn->prepare("SELECT comments FROM App WHERE id = ?");
       echo $conn->error;
       $stmt->bind_param("s", $_SESSION["comments"]);
       $stmt->bind_result($descriptionfromdb);

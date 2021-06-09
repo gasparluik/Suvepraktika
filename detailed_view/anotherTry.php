@@ -1,28 +1,24 @@
 <?php
-require("DB.php");
-
-require("newFetch.php");
 require("config.php");
-//require ("header.php");
+
+require("header.php");
 ?>
+<script>
+//jquery code
+</script>
+<head>
 <body>
-<h1>Live Search</h1>
 
-    <form action = "anotherTry.php" method = "POST">
-        <input type = "text" name="input" placeholder = "Otsi siit..." id = "input">
-        <input type= "submit" value="search"
-    </form>
-
+<div id="comments">
     <?php
-    if (isset($_POST["search"])){
-        if(count($results)< 0){
-            foreach ($results as $r){
-                printf("<div>%s %s</div>", $r['Name'], $r['URL'], $r['Platform']);
-            }
-        } else{
-            echo "No Data found";
-        }
-    }
+    
     ?>
+
+
+</div>
+
+<button>Näita veel rakendusi</button>
+
 </body>
-</html>
+
+</head>

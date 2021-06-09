@@ -63,12 +63,12 @@ function searchFunction(){
             <th>URL</th>
             </table>";
             
-            while( $row = mysqli_fetch_array($result)){
-                echo "<tr>";
-                echo "<td>" . $row['Name'] . "</td>";
-                echo "<td>" . $row['Platform'] . "</td>";
-                echo "<td>" . $row['URL'] . "</td>";
-                echo "</tr>";
+            while( $row = mysqli_fetch_assoc($result)){
+                echo "<p>";
+                echo $row['Name'];
+                echo$row['Platform'];
+                echo $row['URL'];
+                echo "</p>";
 
                 echo "</table>";
                 mysqli_close($conn);

@@ -1,15 +1,4 @@
 <!DOCTYPE html>
 <link rel="stylesheet" type="text/css" href="universalCSS.css">
-<body>
-    <br>
-    <div id="logoimage">
-        <image src="logotest.png" alt="logo" height="100px" width="320px">
-    </div>
-    <br>
-    <div id="container"> 
-        <div id="container_one"></div>
-        <div id="container_two">
-            <div id="content">
-            <div id="titlecontainer">
-                    <h2 id="title"><?php echo "Detailne vaade"?></h2>
-            </div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
