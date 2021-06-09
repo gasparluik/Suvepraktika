@@ -8,6 +8,7 @@
 <body>
 
 <form class='login-form'>
+<form method = "POST" action = "login_query.php">
   <div class="flex-row">
     <label class="lf--label" for="username">
       <svg x="0px" y="0px" width="12px" height="13px">
