@@ -1,0 +1,21 @@
+#searchBar {
+    border: 1px solid #000000;
+    font-size: 16px;
+    padding: 10px;
+    outline: none;
+    width: 25px;
+    border-radius: 5px;
+}
+#searchButton {
+    border: 1px solid #000000;
+    font-size: 16px;
+    padding: 10px;
+    background: #3acce3;
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+}
+
+#searchButton:hover{
+    background: #037788
+}
