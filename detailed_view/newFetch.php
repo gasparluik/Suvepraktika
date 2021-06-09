@@ -1,17 +1,17 @@
 <?php
 require("config.php");
 
-function showResults($searchBox){
+function showResults($input){
     global $conn;
 
-    if( isset($_POST["searchBox"])){
-        $searchBox = $_POST["searchBox"];
+    if( isset($_POST["input"])){
+        $input = $_POST["input"];
 
         $sql= "SELECT (Name, URL, Platform) FROM App WHERE Name LIKE ?";
         $stmt = mysqli_prepare($conn, $sql);
         $stmt->execute([
-            "%" . $_POST["searchBox"] . "%",
-            "%" . $_POST["searchBox"] . "%",
+            "%" . $_POST["input"] . "%",
+            "%" . $_POST["input"] . "%",
         ]);
 
         $results = $stmt->fetch();
