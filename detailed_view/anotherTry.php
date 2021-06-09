@@ -1,7 +1,7 @@
 <?php
 require("DB.php");
 
-require("fetch.php");
+require("newFetch.php");
 //require ("header.php");
 ?>
 <!DOCTYPE html>
@@ -18,6 +18,18 @@ require("fetch.php");
 <input type = "text" name="name" placeholder = "Otsi siit..."
 id = "searchBox">
 </form>
+
+<?php
+if (isset($_POST["searchBox"])){
+    if(count($results)< 0){
+        foreach ($results as $r){
+            printf("<div>%s %s</div>", $r['Name'], $r['URL'], $r['Platform']);
+        }
+    } else{
+        echo "No Data found";
+    }
+}
+?>
 
 <ul id="dataViewer">
     <li>Nimi</li>
