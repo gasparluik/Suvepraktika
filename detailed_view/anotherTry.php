@@ -2,7 +2,7 @@
 require("DB.php");
 
 require("fetch.php");
-require ("header.php");
+//require ("header.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
