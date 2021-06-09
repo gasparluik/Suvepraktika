@@ -23,19 +23,19 @@ if(isset($_SESSION["login_sess"]))
   <div class="form-group">
  <?php if(isset($_GET['err'])){
  $err=$_GET['err'];
- echo '<p class="errmsg">No user found. </p>';
+ echo '<p class="errmsg">Kasutajat ei leitud. </p>';
 } 
 // If server error 
 if(isset($_GET['servererr'])){ 
-echo "<p class='errmsg'>The server failed to send the message. Please try again later.</p>";
+echo "<p class='errmsg'>Serveri viga, palun proovi uuesti.</p>";
    }
    //if other issues 
    if(isset($_GET['somethingwrong'])){ 
- echo '<p class="errmsg">Something went wrong.  </p>';
+ echo '<p class="errmsg">Midagi läks valesti.  </p>';
    }
 // If Success | Link sent 
 if(isset($_GET['sent'])){
-echo "<div class='successmsg'>Reset link has been sent to your registered email id . Kindly check your email. It can be taken 2 to 3 minutes to deliver on your email id . </div>"; 
+echo "<div class='successmsg'>Link on saadetud. Palun mine kontrolli oma emaili. Kui ei ole tulnud, oodake paar minutit . </div>"; 
   }
   ?>
   <?php if(!isset($_GET['sent'])){ ?>
