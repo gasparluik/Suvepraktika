@@ -26,4 +26,3 @@
             </div>
         </div>
         <div id="container_two"></div>
-    </div>

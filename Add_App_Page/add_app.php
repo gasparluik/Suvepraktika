@@ -60,5 +60,6 @@ require("header.php");
 	<br>
 	<input type="submit" name="submitApp" value="Lisa rakendus">
   </form>
+</div>
 </body>
 </html>
