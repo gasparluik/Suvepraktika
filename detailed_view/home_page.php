@@ -77,7 +77,7 @@ $(document).ready(function(){
     <h2>Rakenduse otsimine</h2>
     </div>
     <div class="search-box">
-        <input type="text" autocomplete="off" placeholder="Otsi rakendust..." />
+        <input type="text" name = "inputsearch" id= "inputsearch" autocomplete="off" placeholder="Otsi rakendust..." />
         <button type="button" id="submitSearch" name="submitSearch">Otsi</button>
         <div class="result"></div>
     </div>
