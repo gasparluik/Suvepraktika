@@ -27,7 +27,7 @@
     </label>
     <input id="password" class='lf--input' placeholder='Password' type='password'>
   </div>
-  <input class='lf--submit' type='submit' value='LOGIN'>
+  <input class='lf--submit' type='submit' name ="login" value='LOGIN'>
 </form>
 <a class='lf--forgot' href='http://greeny.cs.tlu.ee/~lisajar/testid/Login/Suvepraktika/Suvepraktika/Suvepraktika/forgot-password.php'>Forgot password?</a>
 </body>
