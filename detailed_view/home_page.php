@@ -66,8 +66,6 @@ $(document).ready(function(){
             resultDropdown.empty();
         }
     });
-
-    inputVal = $inputresult;
     
     // Set search input value on click of result item
     $(document).on("click", ".result p", function(){
