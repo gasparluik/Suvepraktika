@@ -7,10 +7,10 @@ require 'config.php';
  * @version 2.7 - PDO connection option added
  */
 class DataSource{
-    public $host = db_host;
-    public $user = db_user;
-    public $pass = db_pass;
-    public $dbname = db_name;
+    public $host1 = db_host1;
+    public $user1 = db_user1;
+    public $pass1 = db_pass1;
+    public $dbname1 = db_name1;
     public $conn;
     public $error;
     function __construct()
@@ -25,7 +25,7 @@ class DataSource{
      * @return \mysqli
      */
     private function connect(){
-        $this->conn = new mysqli($this->host, $this->user, $this->pass, $this->dbname);
+        $this->conn = new mysqli($this->host1, $this->user1, $this->pass1, $this->dbname1);
         if(!$this->conn){
             $this->error = "Fatal Error: Can't connect to database".$this->conn->connect_error;
             return false;

@@ -1,6 +1,5 @@
 <?php
-class Member
-{
+class Member{
 
     private $ds;
 
