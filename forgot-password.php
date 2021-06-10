@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<?php require_once("config.php");
+<?php require_once ("config.php");
 if(isset($_SESSION["login_sess"])) 
 {
   header("location:home.php"); 

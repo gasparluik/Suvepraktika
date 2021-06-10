@@ -1,5 +1,5 @@
 <?php 
- require_once("config.php");
+ require_once ("config.php");
 if(isset($_POST['subforgot'])){ 
 $login=$_REQUEST['login_var'];
 $query = "SELECT * FROM user WHERE (username='$login' OR email = '$login')"; 
