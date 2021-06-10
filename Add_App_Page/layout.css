@@ -28,7 +28,7 @@ a {
     color: #FFFFFF;
     text-decoration: none;
 }
-
+/*
 button:not(#logout) {
     width: 80%;
     height: 50px;
@@ -40,8 +40,8 @@ button:not(#logout) {
     border-color: #386FA4;
     border-style: solid;
 }
-
-#logout {
+*/
+/*#logout {
     width: 80%;
     height: 30px;
     font-size: 14px;
@@ -51,6 +51,8 @@ button:not(#logout) {
     border-color: #386FA4;
     border-style: solid;
 }
+
+*/
 
 #top {
     padding: 15px;
