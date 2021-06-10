@@ -56,7 +56,8 @@ if( isset($_POST['submitApp'])){ //kui vajutatakse submiti...
             </div>
         </div>
         <div id="container_two">
-                <form method="POST">
+            <div id="input">
+            <form method="POST">
                 <label for="name">Nimetus</label>
                 <input type="text" name="name" id="name" placeholder="Nimetus" required>
                 <br>
@@ -85,6 +86,9 @@ if( isset($_POST['submitApp'])){ //kui vajutatakse submiti...
                 <textarea rows="10" cols="80" name="comment" id="comment" placeholder="Kommentaarid....."></textarea>
                 <br>
                 <input type="submit" name="submitApp" value="Lisa rakendus">
+
+
+            </div>
             </form>
         </div>
     </div>
